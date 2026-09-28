@@ -20,8 +20,7 @@ with open(p('data', 'diary.csv'), newline='', encoding='utf-8') as f:
             'watched': r['Watched Date'], 'logged': r['Date'],
             'uri': r['Letterboxd URI'], 'rewatch': r['Rewatch'].strip().lower() == 'yes',
             'review': '', 'tags': ''})
-state = {'v': 1, 'movies': movies, 'posts': [], 'settings': {'spotify': '', 'spotifyLabel': '', 'tagline': ''}}
-sj = (json.dumps(state, ensure_ascii=False).replace('<', '\\u003c')
+state = {'v': 1, 'movies': movies, 'posts': [], 'settings': {'spotify': 'https://open.spotify.com/album/0jUU3qeyrPNkzhhbGtBakE', 'spotifyLabel': '', 'tagline': '', 'audio': 'data/Itti Fiyah.mp3', 'audioName': 'Itti Fiyah'}}
       .replace('\u2028', '\\u2028').replace('\u2029', '\\u2029'))
 css = open(p('src', 'style.css'), encoding='utf-8').read()
 js = open(p('src', 'app.js'), encoding='utf-8').read().replace('__STK__', open(p('src', 'stickers.json')).read())
